@@ -8,13 +8,13 @@ import sys
 if __name__ == "__main__":
     if (len(sys.argv) < 3):
         print '''
-Usage: %s [csv_file], [output_file] [datetime_output_format] [datetime_input_fields]')
+Usage: %s [csv_file] [output_file] [datetime_output_format] [datetime_input_fields]
   datetime_output_format is a string in sprintf format
   datetime_input_fields is a csv of the fields to pass to datetime_output_format
   If datetime_output_format and datetime_input_fields are not provided, we default to looking for a field named "timestamp"
 
   Ex. if you have the MONTH, DAY, YEAR, TIME in your data and you want a ISO8601 formatted datetime (YYYYMMDDT00:00:00) pass:
-    csv_file.csv output.log "%s%s%sT%s" "YEAR,MONTH,DAY,TIME"
+    csv_to_kv.py csv_file.csv output.log "%s%s%sT%s" "YEAR,MONTH,DAY,TIME"
 '''
         exit(1)
     csv_file = sys.argv[1]
